@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "simonpigeonbalconynets.vercel.app"
+        }
+      ],
+      "destination": "https://simonpigeonbalconynets.in/$1",
+      "permanent": true
+    }
+  ]
+}
