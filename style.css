@@ -1408,122 +1408,131 @@ em{font-style:italic;font-weight:400}
 
 
 /* =========================================================
-   MOBILE SERVICES DROPDOWN FIX
-   Paste this at the VERY END of your CSS
+   MOBILE SERVICES DROPDOWN - TAP FIX
+   Paste at the VERY END of CSS
 ========================================================= */
 
 @media (max-width: 991px) {
 
-  /* Make the dropdown parent usable on touch devices */
-  .navbar-nav .dropdown,
-  .navbar .dropdown,
-  nav .dropdown {
-    position: relative !important;
-    overflow: visible !important;
-  }
+    /* Main dropdown container */
+    .navbar .dropdown,
+    .navbar-nav .dropdown,
+    nav .dropdown {
+        position: relative !important;
+        overflow: visible !important;
+    }
 
-  /* Services dropdown - hidden initially */
-  .navbar-nav .dropdown-menu,
-  .navbar .dropdown-menu,
-  nav .dropdown-menu {
-    display: none !important;
-    position: static !important;
-    width: 100% !important;
-    min-width: 100% !important;
-    max-height: 400px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    margin: 0 !important;
-    padding: 5px 0 !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    transform: none !important;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-  }
+    /* Services button */
+    .navbar .dropdown-toggle,
+    .navbar-nav .dropdown-toggle,
+    nav .dropdown-toggle {
+        display: block !important;
+        position: relative !important;
+        z-index: 10005 !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
 
-  /* OPEN SERVICES WHEN TAPPED / FOCUSED */
-  .navbar-nav .dropdown:focus-within > .dropdown-menu,
-  .navbar .dropdown:focus-within > .dropdown-menu,
-  nav .dropdown:focus-within > .dropdown-menu,
+    /* Hide submenu initially */
+    .navbar .dropdown-menu,
+    .navbar-nav .dropdown-menu,
+    nav .dropdown-menu {
+        display: none !important;
 
-  /* Bootstrap/JS added class */
-  .navbar-nav .dropdown.show > .dropdown-menu,
-  .navbar .dropdown.show > .dropdown-menu,
-  nav .dropdown.show > .dropdown-menu,
+        position: static !important;
 
-  .navbar-nav .dropdown-menu.show,
-  .navbar .dropdown-menu.show,
-  nav .dropdown-menu.show {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
+        width: 100% !important;
+        min-width: 100% !important;
 
-  /* Services button must remain clickable */
-  .navbar-nav .dropdown-toggle,
-  .navbar .dropdown-toggle,
-  nav .dropdown-toggle {
-    position: relative !important;
-    z-index: 10001 !important;
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-  }
+        margin: 0 !important;
+        padding: 5px 0 !important;
 
-  /* Dropdown links */
-  .navbar-nav .dropdown-menu .dropdown-item,
-  .navbar .dropdown-menu .dropdown-item,
-  nav .dropdown-menu .dropdown-item {
-    display: block !important;
-    width: 100% !important;
-    padding: 12px 20px !important;
-    white-space: normal !important;
-    line-height: 1.4 !important;
-    pointer-events: auto !important;
-    cursor: pointer !important;
-  }
+        max-height: 400px !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
 
-  /* Keep the mobile menu above hero/content */
-  .navbar-collapse,
-  .navbar-nav,
-  .navbar .collapse {
-    position: relative !important;
-    z-index: 10000 !important;
-    overflow: visible !important;
-  }
+        transform: none !important;
 
-  /* Prevent hero/other elements from covering the menu */
-  .navbar {
-    position: relative !important;
-    z-index: 10000 !important;
-  }
+        visibility: hidden !important;
+        opacity: 0 !important;
 
-  /* If the mobile menu itself has a fixed/absolute panel */
-  .navbar-collapse.show {
-    z-index: 10000 !important;
-    overflow: visible !important;
-  }
+        pointer-events: none !important;
 
-  /* Smooth submenu appearance */
-  .navbar-nav .dropdown-menu,
-  .navbar .dropdown-menu,
-  nav .dropdown-menu {
-    transition: opacity 0.2s ease, visibility 0.2s ease !important;
-  }
+        transition: none !important;
+    }
 
-  /* Make scrollbar usable when there are many services */
-  .navbar-nav .dropdown-menu::-webkit-scrollbar,
-  .navbar .dropdown-menu::-webkit-scrollbar,
-  nav .dropdown-menu::-webkit-scrollbar {
-    width: 5px;
-  }
+    /* OPEN AFTER TAP */
+    .navbar .dropdown.show > .dropdown-menu,
+    .navbar-nav .dropdown.show > .dropdown-menu,
+    nav .dropdown.show > .dropdown-menu,
 
-  .navbar-nav .dropdown-menu::-webkit-scrollbar-thumb,
-  .navbar .dropdown-menu::-webkit-scrollbar-thumb,
-  nav .dropdown-menu::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-  }
+    .navbar .dropdown-menu.show,
+    .navbar-nav .dropdown-menu.show,
+    nav .dropdown-menu.show,
+
+    .navbar .dropdown:focus-within > .dropdown-menu,
+    .navbar-nav .dropdown:focus-within > .dropdown-menu,
+    nav .dropdown:focus-within > .dropdown-menu {
+
+        display: block !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+
+        position: static !important;
+
+        transform: none !important;
+    }
+
+    /* Dropdown links */
+    .navbar .dropdown-menu .dropdown-item,
+    .navbar-nav .dropdown-menu .dropdown-item,
+    nav .dropdown-menu .dropdown-item {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 11px 20px !important;
+
+        white-space: normal !important;
+
+        line-height: 1.4 !important;
+
+        pointer-events: auto !important;
+
+        touch-action: manipulation !important;
+
+        cursor: pointer !important;
+    }
+
+    /* Mobile navbar must stay above hero/content */
+    .navbar,
+    .navbar-collapse,
+    .navbar-nav {
+        position: relative !important;
+        z-index: 10000 !important;
+        overflow: visible !important;
+    }
+
+    .navbar-collapse.show {
+        overflow: visible !important;
+        z-index: 10001 !important;
+    }
+
+    /* Prevent invisible elements from blocking the Services button */
+    .navbar .dropdown-toggle::before,
+    .navbar .dropdown-toggle::after {
+        pointer-events: none !important;
+    }
+
+    /* Better touch scrolling for long Services list */
+    .navbar .dropdown-menu {
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior: contain !important;
+    }
 }
