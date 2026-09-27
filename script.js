@@ -79,10 +79,11 @@ if (window.Swiper) {
     hamburger.classList.toggle('open');
     navMenu.classList.toggle('open');
   });
-  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navMenu.classList.remove('open');
-  }));
+  // navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  //   hamburger.classList.remove('open');
+  //   navMenu.classList.remove('open');
+  // }));
+  
 // navMenu.querySelectorAll('a').forEach(a => {
 
 //     a.addEventListener('click', function(e){
