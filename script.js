@@ -163,7 +163,7 @@ if (window.Swiper) {
       + `*Location:* ${encodeURIComponent(location)}%0A`
       + `*Message:* ${encodeURIComponent(message || '—')}`;
 
-    window.open(`https://wa.me/919701744317?text=${text}`, '_blank');
+    window.open(`https://wa.me/916360446373?text=Hi%20I%20am%20interested%20in%20Simon%20Safety%20Nets.%20Please%20share%20the%20details.?text=${text}`, '_blank');
     form.reset();
   });
 
